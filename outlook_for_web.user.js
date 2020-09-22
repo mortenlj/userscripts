@@ -12,6 +12,8 @@
 (function () {
     'use strict';
 
+    const TIMEOUT = 500
+
     /**
      * Change the sort order of emails to Oldest on top
      */
@@ -21,7 +23,9 @@
             if (filter !== undefined) {
                 console.log("Clicking filter button")
                 filter.click()
-                setTimeout(clickSort, 20)
+                setTimeout(clickSort, TIMEOUT)
+            } else {
+                setTimeout(clickFilter, TIMEOUT)
             }
         }
 
@@ -30,9 +34,9 @@
             if (sort !== undefined) {
                 console.log("Clicking sort button")
                 sort.click()
-                setTimeout(clickOldestOnTop, 20)
+                setTimeout(clickOldestOnTop, TIMEOUT)
             } else {
-                setTimeout(clickSort, 20)
+                setTimeout(clickSort, TIMEOUT)
             }
         }
 
@@ -42,10 +46,10 @@
                 console.log("Selecting oldest on top")
                 oldest.click()
             } else {
-                setTimeout(clickOldestOnTop, 20)
+                setTimeout(clickOldestOnTop, TIMEOUT)
             }
         }
-        clickFilter();
+        setTimeout(clickFilter, 2000);
     }
 
     jQuery.noConflict();
