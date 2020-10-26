@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Outlook for web usability
 // @namespace    https://github.com/mortenlj/userscripts
-// @version      0.2
+// @version      0.3
 // @downloadURL  https://raw.githubusercontent.com/mortenlj/userscripts/master/outlook_for_web.user.js
 // @description  Make Outlook for web usable
 // @author       Morten Lied Johansen
@@ -13,36 +13,13 @@
     'use strict';
 
     const TIMEOUT = 500
-    const STRINGS = {
-        en: {
-            filter: "Filter",
-            sort: "Sort",
-            oldest: "Oldest on top",
-        },
-        no: {
-            filter: "Filtrer",
-            sort: "Sorter",
-            oldest: "Eldste øverst",
-        }
-    }
 
     /**
      * Change the sort order of emails to Oldest on top
      */
     function fixSortOrder($) {
-        let s
-
-        function selectStrings() {
-            let html = $("html")
-            let lang = "en"
-            if (html !== undefined) {
-                lang = html.attr("lang")
-            }
-            return STRINGS[lang]
-        }
-
         function clickFilter() {
-            let filter = $(`div:contains('${s.filter}')`).last()
+            let filter = $("div:contains('Filtrer')").last()
             if (filter !== undefined) {
                 console.log("Clicking filter button")
                 filter.click()
@@ -53,7 +30,7 @@
         }
 
         function clickSort() {
-            let sort = $(`[name='${s.sort}']`)
+            let sort = $("[name='Sorter']")
             if (sort !== undefined) {
                 console.log("Clicking sort button")
                 sort.click()
@@ -64,7 +41,7 @@
         }
 
         function clickOldestOnTop() {
-            let oldest = $(`[name='${s.oldest}']`)
+            let oldest = $("[name='Eldste øverst']")
             if (oldest !== undefined) {
                 console.log("Selecting oldest on top")
                 oldest.click()
@@ -72,8 +49,6 @@
                 setTimeout(clickOldestOnTop, TIMEOUT)
             }
         }
-
-        s = selectStrings()
         setTimeout(clickFilter, 2000);
     }
 
