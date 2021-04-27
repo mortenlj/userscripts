@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gcloud auto select account
 // @namespace    https://github.com/mortenlj/userscripts
-// @version      0.1
+// @version      0.2
 // @downloadURL  https://raw.githubusercontent.com/mortenlj/userscripts/master/gcloud_account.user.js
 // @description  Select my NAV gcloud account automatically and approve access
 // @author       Morten Lied Johansen
@@ -26,11 +26,10 @@
         console.log("Checking for account selector")
         let accountSelector = document.querySelector('[data-identifier="morten.lied.johansen@nav.no"]');
         if (accountSelector != null) {
-            console.log("Selecting NAV account")
-            return accountSelector.click();
-        } else {
-            setTimeout(selectAccount, 200)
+            console.log("Selecting NAV account (if possible)")
+            accountSelector.click()
         }
+        setTimeout(selectAccount, 200)
     }
 
     function approve() {
