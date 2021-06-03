@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gcloud auto select account
 // @namespace    https://github.com/mortenlj/userscripts
-// @version      0.2
+// @version      0.3
 // @downloadURL  https://raw.githubusercontent.com/mortenlj/userscripts/master/gcloud_account.user.js
 // @description  Select my NAV gcloud account automatically and approve access
 // @author       Morten Lied Johansen
@@ -11,14 +11,19 @@
 // ==/UserScript==
 (function() {
     'use strict';
+    const initialDelay = 500;
+    const retryInterval = 300;
 
     function docReady(fn) {
         // see if DOM is already available
         if (document.readyState === "complete" || document.readyState === "interactive") {
-            // call on next available tick
-            setTimeout(fn, 1);
+            // Ready, wait 500ms and make the call
+            setTimeout(fn, initialDelay);
         } else {
-            document.addEventListener("DOMContentLoaded", fn);
+            document.addEventListener("DOMContentLoaded", function () {
+                // When ready, wait another 500ms before calling
+                setTimeout(fn, initialDelay);
+            });
         }
     }
 
@@ -29,7 +34,7 @@
             console.log("Selecting NAV account (if possible)")
             accountSelector.click()
         }
-        setTimeout(selectAccount, 200)
+        setTimeout(selectAccount, retryInterval)
     }
 
     function approve() {
@@ -39,7 +44,7 @@
             console.log("Approving access")
             return submitButton.click();
         } else {
-            setTimeout(approve, 200)
+            setTimeout(approve, retryInterval)
         }
     }
 
