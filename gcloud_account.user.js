@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gcloud auto select account
 // @namespace    https://github.com/mortenlj/userscripts
-// @version      0.3
+// @version      0.3.1
 // @downloadURL  https://raw.githubusercontent.com/mortenlj/userscripts/master/gcloud_account.user.js
 // @description  Select my NAV gcloud account automatically and approve access
 // @author       Morten Lied Johansen
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
     const initialDelay = 500;
-    const retryInterval = 300;
+    const retryInterval = 500;
 
     function docReady(fn) {
         // see if DOM is already available
