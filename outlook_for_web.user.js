@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Outlook for web usability
 // @namespace    https://github.com/mortenlj/userscripts
-// @version      0.3.1
+// @version      0.3.2
 // @downloadURL  https://raw.githubusercontent.com/mortenlj/userscripts/master/outlook_for_web.user.js
 // @description  Make Outlook for web usable
 // @author       Morten Lied Johansen
 // @match        https://outlook.office.com/*
 // @match        https://outlook.office365.com/*
+// @match        https://outlook.office365.com.mcas.ms/*
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
 // ==/UserScript==
 
