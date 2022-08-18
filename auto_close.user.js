@@ -10,6 +10,7 @@
 // @match        https://cloud.google.com/sdk/auth_success
 // @match        https://login.microsoftonline.com/appverify
 // @match        http://localhost/?code=*
+// @match        http://localhost/google?state=*
 // @match        https://*.zoom.us/j/*
 // @match        https://zoom.us/j/*
 // @grant        window.close
