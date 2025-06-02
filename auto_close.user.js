@@ -9,7 +9,7 @@
 // @match        https://*.slack.com/archives/
 // @match        https://cloud.google.com/sdk/auth_success
 // @match        https://login.microsoftonline.com/appverify
-// @match        https://console.*.cloud.nais.io/?naisdevice=1
+// @match        https://console.nav.cloud.nais.io/?naisdevice=1
 // @match        http://localhost/?code=*
 // @match        http://localhost/google?state=*
 // @match        https://*.zoom.us/j/*
