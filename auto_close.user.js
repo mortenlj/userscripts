@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto-close tab!
 // @namespace    https://github.com/mortenlj/userscripts
-// @version      0.5.6
+// @version      0.5.7
 // @downloadURL  https://raw.githubusercontent.com/mortenlj/userscripts/master/auto_close.user.js
 // @description  Fade out and close the tab automatically
 // @author       Morten Lied Johansen
@@ -11,7 +11,7 @@
 // @match        https://login.microsoftonline.com/appverify
 // @match        https://console.nav.cloud.nais.io/?naisdevice=1
 // @match        http://localhost/?code=*
-// @match        http://localhost/google?state=*
+// @match        http://localhost/auth/google?state=*
 // @match        https://*.zoom.us/j/*
 // @match        https://zoom.us/j/*
 // @grant        window.close
